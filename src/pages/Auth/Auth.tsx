@@ -8,6 +8,7 @@ import Home from "../../pages/Home/Home"
 
 import "./Auth.scss";
 
+//Донастроить роутинг, после определения логики
 const Auth = () => (
   <section className="auth">
     <div className="auth__content">
