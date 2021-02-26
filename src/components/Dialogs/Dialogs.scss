@@ -1,12 +1,4 @@
-//@import "~styles/variables";
-
-$blue: #3674ff;
-$black: #202020;
-$green: #00c980;
-
-$message-typing-blue: #e5edff;
-$message-typing-circle: #a6bdf0;
-
+@import "../../styles/variables";
 
 .dialogs {
   &__search {

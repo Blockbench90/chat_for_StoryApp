@@ -6,15 +6,13 @@ import Block from "../Block/Block";
 
 
 const CheckEmailInfo = () => {
-  const history = useHistory()
+    const history = useHistory()
 
     return (
         <div className="verify-block">
             <Block>
-                    <Result
-                        status='success'
-                        title='title'
-                        subTitle='message'/>
+                <Result status='success' title='title' subTitle='message'/>
+
                 <Button type="primary" onClick={() => history.push('/signin')}>
                     Войти
                 </Button>
