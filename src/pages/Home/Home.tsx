@@ -1,10 +1,9 @@
 import React from 'react';
-
-import Message from '../../components/Message/Message';
 import Status from "../../components/Status/Status";
 import ChatInput from "../../components/ChatInput/ChatInput";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './Home.scss';
+import Messages from '../../components/Messages/Messages';
 
 
 const Home = () => {
@@ -12,12 +11,15 @@ const Home = () => {
     <section className="home">
       <div className="chat">
         <Sidebar />
+
           <div className="chat__dialog">
             <Status />
-            <Message />
+            <Messages />
+
             <div className="chat__dialog-input">
               <ChatInput />
             </div>
+
           </div>
       </div>
     </section>

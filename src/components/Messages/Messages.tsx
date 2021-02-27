@@ -1,16 +1,25 @@
 import React from 'react';
-import {Spin} from 'antd';
 
 
 import './Messages.scss';
 import Message from "../Message/Message";
 
+
 const Messages = () => {
   return (
     <div className="chat__dialog-messages" >
       <div  className={'messages'}>
-          <Spin size="large" tip="Загрузка сообщений..." />
-              <Message/>
+              <Message isMe={false}
+                       isRead={false}
+                       isTyping={false}
+                       text={'Hello hello hello, in my world some рассцвело'}
+              />
+          <Message isMe={true}
+                   isRead={true}
+                   isTyping={false}
+                   text={'Hello hello hello, in my world some рассцвело'}
+
+          />
       </div>
     </div>
   );

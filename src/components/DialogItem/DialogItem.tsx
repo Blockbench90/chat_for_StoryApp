@@ -12,16 +12,17 @@ const DialogItem = () => (
     <div
       className={'dialogs__item'}>
       <div className="dialogs__item-avatar">
-        <Avatar/>
+        <Avatar fullName={'Block'}
+                avatar={'https://avatars.githubusercontent.com/u/61389735?s=460&u=1f728e3e551fc8b29ea158e21d963a53901128f5&v=4'}/>
       </div>
       <div className="dialogs__item-info">
         <div className="dialogs__item-info-top">
-          <b>fullname</b>
-          <span>lastMessage</span>
+          <b>Blockbench90</b>
+          <span>@blockbench90</span>
         </div>
         <div className="dialogs__item-info-bottom">
-          <p>lastMessage</p>
-          <IconRead />
+          <p>Hello, hello, hello</p>
+          <IconRead isMe={true} isRead={false}/>
         </div>
       </div>
     </div>

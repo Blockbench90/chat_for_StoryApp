@@ -2,15 +2,20 @@ import React from "react";
 
 import "./Avatar.scss";
 
-const Avatar = () => {
+interface AvatarProps {
+    avatar: string
+    fullName: string
+}
+
+const Avatar: React.FC<AvatarProps> = ({avatar, fullName}) => {
     return (
-        <div style={{
-            background: `linear-gradient(135deg, 0%, 96.52%)`
-        }}
-             className="avatar avatar--symbol">
-            firstChar
-        </div>
+        <img
+            className="avatar"
+            src={avatar}
+            alt={`Avatar ${fullName}`}
+        />
     );
+
 }
 
 export default Avatar;

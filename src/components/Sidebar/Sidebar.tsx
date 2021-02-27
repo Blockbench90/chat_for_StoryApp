@@ -4,6 +4,7 @@ import Dialogs from "../Dialogs/Dialogs";
 
 
 import './Sidebar.scss';
+import {EditOutlined} from "@ant-design/icons";
 
 
 const { TextArea } = Input;
@@ -15,7 +16,7 @@ const Sidebar = () => {
         <div>
           <span>Список диалогов</span>
         </div>
-        <Button type="link" shape="circle" icon="form" />
+          <Button type="primary" shape="circle" icon={<EditOutlined />} />
       </div>
 
       <div className="chat__sidebar-dialogs">
