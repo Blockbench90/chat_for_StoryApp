@@ -1,10 +1,12 @@
+//@ts-nocheck
 import React from "react";
-import { Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import {Form, Input} from "antd";
+import {Link} from "react-router-dom";
 
 import Block from "../Block/Block";
 import Button from "../Buttons/Button";
 import validateField from "../../utils/validateField";
+
 
 const LoginForm = ({values, touched, errors, handleChange, handleBlur, handleSubmit, isValid, isSubmitting}) => {
   return (

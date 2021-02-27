@@ -1,18 +1,34 @@
 import React from "react";
-import {Form, Input} from "antd";
-import Icon from "@ant-design/icons/lib/components/Icon";
+import { Form, Input } from "antd";
 
-const FormField = (props: any) => {
+import validateField from "../../utils/validateField";
+
+const FormField = ({
+                     name,
+                     placeholder,
+                     type,
+                     handleChange,
+                     handleBlur,
+                     touched,
+                     errors,
+                     values
+                   }: any) => {
   return (
-    <Form.Item
-      hasFeedback
-    >
-      <Input
-        prefix={<Icon style={{ color: "rgba(0,0,0,.25)" }} />}
-        size="large"
-
-      />
-    </Form.Item>
+      <Form.Item
+          validateStatus={validateField(name, touched, errors)}
+          help={!touched[name] ? "" : errors[name]}
+          hasFeedback
+      >
+        <Input
+            id={name}
+            size="large"
+            placeholder={placeholder}
+            value={values[name]}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            type={type}
+        />
+      </Form.Item>
   );
 };
 
