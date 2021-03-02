@@ -43,8 +43,8 @@ const Message:React.FC<MessageProps> = ({  avatar, text,
               </Popover>
 
               <div className="message__avatar">
-                  <Avatar avatar={'https://avatars.githubusercontent.com/u/61389735?s=460&u=1f728e3e551fc8b29ea158e21d963a53901128f5&v=4'}
-                          fullName={'Blockbench'} />
+                  {/*<Avatar  avatar={'https://avatars.githubusercontent.com/u/61389735?s=460&u=1f728e3e551fc8b29ea158e21d963a53901128f5&v=4'}*/}
+                  {/*        fullName={'Blockbench'} />*/}
               </div>
 
               <div className="message__info">

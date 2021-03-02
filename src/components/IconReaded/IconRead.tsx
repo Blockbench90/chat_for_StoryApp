@@ -4,7 +4,7 @@ import noReadSvg from "../../assets/img/noreaded.svg";
 
 interface IconReadProps {
     isMe: boolean
-    isRead?: boolean
+    isRead: boolean
 }
 
 const IconRead: React.FC<IconReadProps> = ({isMe, isRead}) => {
