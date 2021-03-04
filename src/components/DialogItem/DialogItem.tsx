@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import format from 'date-fns/format';
-import isToday from 'date-fns/isToday'
+
 import {Link} from 'react-router-dom';
 import IconRead from "../IconReaded/IconRead";
 import Avatar from "../Avatar/Avatar";
+import isToday from 'date-fns/isToday/index.js';
+
 
 
 const getMessageTime = (createdAt: Date | number) => {
@@ -73,11 +75,9 @@ const DialogItem: React.FC<DialogItemProps> = ({_id, isMe,
                     <div className="dialogs__item-info-bottom">
                         <p>{renderLastMessage(lastMessage, userId)}</p>
                        <IconRead isMe={false}  isRead={false}/>
-                         (
                             <div className="dialogs__item-info-bottom-count">
                                 {lastMessage.unread > 9 ? '+9' : lastMessage.unread}
                             </div>
-                        )
                     </div>
                 </div>
             </div>

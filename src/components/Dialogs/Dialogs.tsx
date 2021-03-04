@@ -23,21 +23,21 @@ export interface DialogsProps {
 const Dialogs: React.FC<DialogsProps> = ({ items, userId= 'asdfasdf', onSearch, inputValue, currentDialogId }) =>{
     const show = true
     const dialogProps = {
-        _id: 'string',
+        _id: 'f61b26d635309536c3c83c0adc3cb972',
         isMe: false,
         currentDialogId: 'string',
         userId: 'string',
         partner: {
-            _id: 'string',
+            _id: '635309536c3c83c0adc3cb972',
             isOnline: true,
-            fullName: 'fullName',
-            avatar: 'string',
+            fullName: 'Darvin',
+            avatar: 'https://picsum.photos/150/150',
         },
         lastMessage: {
-            createdAt: 'string',
+            createdAt: "2018-09-28T10:55:51.603Z",
             read: false,
             unread: 8,
-            text: 'string of text',
+            text: 'Андерсен, не говори вслух, ты понижаешь IQ всей улицы!',
             attachments: ['qw', 'ds'],
             user: { _id: 'string' }
 
@@ -58,7 +58,6 @@ const Dialogs: React.FC<DialogsProps> = ({ items, userId= 'asdfasdf', onSearch, 
                 // @ts-ignore
                 <DialogItem
                     key={dialogProps.userId}
-                    // isMe={items.author._id === userId}
                     isMe={false}
                     userId={dialogProps.userId}
                     currentDialogId={currentDialogId}
