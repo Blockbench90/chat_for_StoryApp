@@ -15,7 +15,7 @@ interface MessageProps {
     text?: string
     date?: Date | number
     isMe: boolean
-    isRead: boolean
+    isRead?: boolean
     isTyping?: boolean
     audio?: string
     read?: boolean
@@ -65,10 +65,10 @@ const Message:React.FC<MessageProps> = ({  avatar, text,
                       </div>
                   )}
 
-                  {date && (<span className="message__date">
-                                <Time date={date} />
-                            </span>
-                  )}
+                  {/*{date && (<span className="message__date">*/}
+                  {/*              <Time date={date} />*/}
+                  {/*          </span>*/}
+                  {/*)}*/}
 
               </div>
           </div>

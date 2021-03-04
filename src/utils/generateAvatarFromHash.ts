@@ -1,5 +1,6 @@
 import tinycolor from "tinycolor2";
 
+
 const getCorrectIndex = (number: number) => {
   if (number > 255) {
     return 255;

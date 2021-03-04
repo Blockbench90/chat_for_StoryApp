@@ -3,8 +3,49 @@ import {Input, Empty} from "antd";
 
 import DialogItem from "../DialogItem/DialogItem";
 import "./Dialogs.scss";
+import { orderBy } from "lodash";
 
-const Dialogs = ({ items, userId, onSearch, inputValue, currentDialogId }) => (
+interface items {
+    _id: string
+    author: {
+        _id: string
+    }
+}
+
+export interface DialogsProps {
+    items: items[]
+    userId: string
+    onSearch: (e: any) => void
+    inputValue: string
+    currentDialogId: string
+}
+
+const Dialogs: React.FC<DialogsProps> = ({ items, userId= 'asdfasdf', onSearch, inputValue, currentDialogId }) =>{
+    const show = true
+    const dialogProps = {
+        _id: 'string',
+        isMe: false,
+        currentDialogId: 'string',
+        userId: 'string',
+        partner: {
+            _id: 'string',
+            isOnline: true,
+            fullName: 'fullName',
+            avatar: 'string',
+        },
+        lastMessage: {
+            createdAt: 'string',
+            read: false,
+            unread: 8,
+            text: 'string of text',
+            attachments: ['qw', 'ds'],
+            user: { _id: 'string' }
+
+        }
+    }
+
+
+    return (
     <div className="dialogs">
         <div className="dialogs__search">
             <Input.Search
@@ -13,22 +54,23 @@ const Dialogs = ({ items, userId, onSearch, inputValue, currentDialogId }) => (
                 value={inputValue}
             />
         </div>
-        {items.length ? (
-            orderBy(items, ["created_at"], ["desc"]).map(item => (
+        {show ? (
+                // @ts-ignore
                 <DialogItem
-                    key={item._id}
-                    isMe={item.author._id === userId}
-                    userId={userId}
+                    key={dialogProps.userId}
+                    // isMe={items.author._id === userId}
+                    isMe={false}
+                    userId={dialogProps.userId}
                     currentDialogId={currentDialogId}
-                    {...item}
+                    {...dialogProps}
                 />
-            ))
-        ) : (
+            )
+         : (
             <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
                 description="Ничего не найдено"
             />
         )}
     </div>
-);
+)}
 export default Dialogs;

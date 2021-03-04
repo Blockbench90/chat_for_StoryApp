@@ -1,56 +1,62 @@
+//@ts-nocheck
 import React from 'react';
 import { Button, Modal, Select, Input, Form } from 'antd';
 import Dialogs from "../Dialogs/Dialogs";
 
 
 import './Sidebar.scss';
-import Icon, {EditOutlined} from "@ant-design/icons";
+import Icon, {FormOutlined, TeamOutlined} from "@ant-design/icons";
 
 
 const { TextArea } = Input;
 
 const Sidebar = () => {
-    const user = {
-        _id: 'asdfasdfasdf'
+    const selectedUserId = ''
 
-    }
+    const user = {
+        _id: 'asdfasdfasdf',
+        items: {
+            _id: "asdfasdf",
+            author: {
+                _id: 'asdfasdfasdfsfs'
+            }
+        }
+}
+
   return (
       <div className="chat__sidebar">
           <div className="chat__sidebar-header">
               <div>
                   <Icon type="team" />
+                  <TeamOutlined />
                   <span>Список диалогов</span>
               </div>
-              <Button type="link" shape="circle" icon="form" />
+              <Button type="link" shape="circle" icon={<FormOutlined />} />
           </div>
 
           <div className="chat__sidebar-dialogs">
-              <Dialogs userId={user._id} />
+              <Dialogs user={user} />
           </div>
           <Modal
               title="Создать диалог"
-              visible={visible}
-              onCancel={onClose}
+              visible={false}
+              // onCancel={false}
               footer={[
-                  <Button key="back" onClick={onClose}>
+                  <Button key="back" >
                       Закрыть
                   </Button>,
                   <Button
-                      disabled={!messageText}
+                      disabled={false}
                       key="submit"
                       type="primary"
-                      loading={isLoading}
-                      onClick={onModalOk}>
+                      loading={false}>
                       Создать
                   </Button>,
               ]}>
               <Form className="add-dialog-form">
                   <Form.Item label="Введите имя пользователя или E-Mail">
                       <Select
-                          value={inputValue}
-                          onSearch={onSearch}
-                          onChange={onChangeInput}
-                          onSelect={onSelectUser}
+                          value={''}
                           notFoundContent={null}
                           style={{ width: '100%' }}
                           defaultActiveFirstOption={false}
@@ -58,15 +64,15 @@ const Sidebar = () => {
                           filterOption={false}
                           placeholder="Введите имя пользователя или почту"
                           showSearch>
-                          {options}
+                          {/*{options}*/}
+                          option
                       </Select>
                   </Form.Item>
                   {selectedUserId && (
                       <Form.Item label="Введите текст сообщения">
                           <TextArea
                               autosize={{ minRows: 3, maxRows: 10 }}
-                              onChange={onChangeTextArea}
-                              value={messageText}
+                              value={''}
                           />
                       </Form.Item>
                   )}

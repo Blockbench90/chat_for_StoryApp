@@ -9,6 +9,8 @@ type TimeProps = {
 }
 const Time: React.FC<TimeProps> = ({ date }): React.ReactElement => (
   <Fragment>
+    {console.log(date)}
+    {console.log(formatDistanceToNow (date, { addSuffix: true, locale: ruLocale }))}
     {formatDistanceToNow (date, { addSuffix: true, locale: ruLocale })}
   </Fragment>
 );
